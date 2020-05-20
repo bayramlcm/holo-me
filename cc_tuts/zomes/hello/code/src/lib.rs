@@ -58,4 +58,8 @@ mod hello_zome {
         let address = hdk::commit_entry(&entry)?;
         Ok(address)
     }
+    #[zome_fn("hc_public")]
+    pub fn retrieve_person(address: Address) -> ZomeApiResult<Person> {
+        hdk::utils::get_as_type(address)
+    }
 }
