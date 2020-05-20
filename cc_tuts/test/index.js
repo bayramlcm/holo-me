@@ -50,7 +50,7 @@ orchestrator.registerScenario('Test hello holo', async (s, t) => {
     t.deepEqual(result, { Ok: 'Merhaba Holo' });
 
     const create_result = await alice.call('cc_tuts', 'hello', 'create_person', {
-        person: { name: 'Alice' },
+        person: { name: 'Bayram' },
     });
     t.ok(create_result.Ok);
     const alice_person_address = create_result.Ok;

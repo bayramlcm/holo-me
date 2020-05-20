@@ -36,7 +36,7 @@ mod hello_zome {
 
     #[zome_fn("hc_public")]
     fn hello_holo() -> ZomeApiResult<String> {
-        Ok("Hello Holo".into())
+        Ok("Merhaba Holo".into())
     }
     #[entry_def]
     fn person_entry_def() -> ValidatingEntryType {
