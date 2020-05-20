@@ -25,3 +25,20 @@ function create_person() {
     }).then(result => show_output(result, 'address_output'));
   });
 }
+function retrieve_person() {
+  var address = document.getElementById('address_in').value.trim();
+  holochain_connection.then(({ callZome, close }) => {
+    callZome('test-instance', 'hello', 'retrieve_person')({
+      address: address,
+    }).then(result => show_person(result, 'person_output'));
+  });
+}
+function show_person(result) {
+  var person = document.getElementById('person_output');
+  var output = JSON.parse(result);
+  if (output.Ok) {
+    person.textContent = ' ' + output.Ok.name;
+  } else {
+    alert(output.Err.Internal);
+  }
+}
