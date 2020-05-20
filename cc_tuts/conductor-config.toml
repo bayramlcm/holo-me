@@ -1,0 +1,61 @@
+bridges = []
+persistence_dir = ''
+
+[[agents]]
+id = 'hc-run-agent'
+keystore_file = 'testAgent'
+name = 'testAgent'
+public_address = 'HcScjN8wBwrn3tuyg89aab3a69xsIgdzmX5P9537BqQZ5A7TEZu7qCY4Xzzjhma'
+test_agent = true
+
+[[dnas]]
+file = 'dist/cc_tuts.dna.json'
+hash = 'QmTzqQvcZQB6EdX5WtV3nXfkpbi9bNqp91Q9SNwS7X4aEL'
+id = '__cc_tuts'
+
+[[instances]]
+agent = 'hc-run-agent'
+dna = '__cc_tuts'
+id = '__cc_tuts'
+
+[instances.storage]
+type = 'memory'
+
+[[interfaces]]
+admin = false
+choose_free_port = false
+id = 'cc_tuts_ui'
+
+[[interfaces.instances]]
+alias = 'test-instance'
+id = '__cc_tuts'
+
+[interfaces.driver]
+port = 50000
+type = 'websocket'
+
+[[ui_bundles]]
+id = 'cc_tuts_ui'
+root_dir = '../gui'
+
+[[ui_interfaces]]
+bind_address = '127.0.0.1'
+bundle = 'cc_tuts_ui'
+dna_interface = 'cc_tuts_ui'
+id = 'cc_tuts_ui'
+port = 8888
+reroute_to_root = false
+
+[logger]
+state_dump = true
+type = 'debug'
+
+[logger.rules]
+rules = []
+
+[passphrase_service]
+type = 'cmd'
+
+[signals]
+consistency = false
+trace = false
