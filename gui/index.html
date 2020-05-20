@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="tr">
+<html lang="en">
 
 <head>
     <meta charset="utf-8" />
@@ -12,9 +12,11 @@
 
 <body>
     <button onclick="hello()" type="button">Say Hello</button>
-    
     <div>Response: <span id="output"></span></div>
-
+    <h3>Create a person</h3>
+    <input type="text" id="name" placeholder="Enter your name :)">
+    <button onclick="create_person()" type="button">Submit Name</button>
+    <div>Address: <span id="address_output"></span></div>
     <script type="text/javascript" src="hc-web-client/hc-web-client-0.5.1.browser.min.js"></script>
     <script type="text/javascript" src="hello.js"></script>
 </body>
