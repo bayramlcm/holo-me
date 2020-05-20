@@ -21,11 +21,3 @@ $ hc run
 ```
 ### Uygulamayı önizleme
 #### [http://127.0.0.1:8888/](http://127.0.0.1:8888/)
-
-
-## Ekran Görüntüleri
-### Adım 1
-<img src="./screenshot/start.png">
-
-### Adım 2
-<img src="./screenshot/last.png">
